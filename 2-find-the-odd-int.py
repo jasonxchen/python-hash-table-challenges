@@ -24,4 +24,16 @@ Output: 10
 '''    
 
 def find_it(li):
-  pass
+  table = {}
+  for num in li:
+    if num in table:
+      table[num] += 1
+    else:
+      table[num] = 1
+  for num in table:
+    if table[num] % 2 == 1:
+      return num
+
+print(find_it([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]))    # expect 5
+print(find_it([1,1,2,-2,5,2,4,4,-1,-2,5]))    # expect -1
+print(find_it([10]))    # expect 10
